@@ -193,7 +193,7 @@
     }
     #backToTop {
       position: fixed;
-      bottom: 24px;
+      bottom: 64px;
       left: 24px;
       background: #0574CD;
       color: white;
@@ -211,6 +211,30 @@
     #backToTop:hover {
       background: #F79206;
     }
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #F79206; /* برتقالي */
+  color: #fff;
+  text-align: center;
+  padding: 0.75em 0;
+  z-index: 10002;
+  overflow: hidden; /* إخفاء أي تجاوز للنص */
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: slideText 35s linear infinite;
+  font-weight: bold;
+  font-size: 1.05em;
+}
+@keyframes slideText {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
   </style>
 </head>
 <body>
@@ -243,14 +267,16 @@
       "أفلام": {
         "أفلام_أجنبية": "أفلام أجنبية",
         "أفلام_هندية": "أفلام هندية",
-        "أفلام_عربية": "أفلام عربية"
+        "أفلام_عربية": "أفلام عربية",
+        "أفلام_أنمي":  "أفلام أنمي"     /* ← إضافة */
       },
       "مسلسلات": {
-        "مسلسلات_تركية": "مسلسلات تركية",
+        "مسلسلات_تركية":  "مسلسلات تركية",
         "مسلسلات_أجنبية": "مسلسلات أجنبية",
-        "مسلسلات_عربية": "مسلسلات عربية",
-        "مسلسلات_مدبلجة": "مسلسلات مدبلجة",
-        "مسلسلات_يمنية": "مسلسلات يمنية"
+        "مسلسلات_عربية":  "مسلسلات عربية",
+        "مسلسلات_مدبلجة":"مسلسلات مدبلجة",
+        "مسلسلات_يمنية":  "مسلسلات يمنية",
+        "مسلسلات_تاريخية":"مسلسلات تاريخية" /* ← إضافة */
       },
       "أنمي": {
         "أنمي_مترجم": "أنمي مترجم",
@@ -259,7 +285,7 @@
     };
 
     const data = {
-      "أفلام_أجنبية": [
+      "أفلام_أجنبية":       [
 { title: "11 2018", img: "https://i.postimg.cc/c4RdHx7K/11-2018.jpg" },
 { title: "12 Strong 2018", img: "https://i.postimg.cc/gjRm3dfT/12-Strong-2018.jpg" },
 { title: "13 Bom Di Jakarta 2024", img: "https://i.postimg.cc/x1gYv64n/13-Bom-Di-Jakarta-2024.png" },
@@ -861,8 +887,8 @@
 { title: "image", img: "https://i.postimg.cc/tgLcWPp9/image.jpg" },
 { title: "image", img: "https://i.postimg.cc/sX7NcXg7/image.jpg" },
 { title: "Werewolves Of The Third Reich 2017", img: "https://i.postimg.cc/wvH0Hdzd/Werewolves-Of-The-Third-Reich-2017.jpg" },
-      ],
-      "أفلام_هندية": [
+],
+      "أفلام_هندية":        [
   { title: "1 Nenokkadine 2014", img: "https://i.postimg.cc/hjccfBrC/1-Nenokkadine-2014.jpg" },
   { title: "10 Endrathukulla 2015", img: "https://i.postimg.cc/wBh9qvhy/10-Endrathukulla-2015.jpg" },
   { title: "100 Days of Love 2015", img: "https://i.postimg.cc/0Ng81mJ1/100-Days-of-Love-2015.jpg" },
@@ -2346,16 +2372,17 @@
   { title: "Patel S I R 2017", img: "https://i.postimg.cc/vZ5wVtzq/Patel-S-I-R-2017.jpg" },
   { title: "Pataki 2017", img: "https://i.postimg.cc/YqGHpHmw/Pataki-2017.jpg" },
   { title: "Pataas 2016", img: "https://i.postimg.cc/Y2y7K903/Pataas-2016.jpg" },
-      ],
-      "أفلام_عربية": [
-        { title: "الفيل الأزرق", img: "https://via.placeholder.com/200x300?text=الفيل+الأزرق" },
-        { title: "الفيل الأبيض", img: "https://via.placeholder.com/200x300?text=الفيل+الأبيض" }
-      ],
-      "مسلسلات_تركية": [
-        { title: "حب أعمى", img: "https://via.placeholder.com/200x300?text=حب+أعمى" },
-        { title: "زهرة الثالوث", img: "https://via.placeholder.com/200x300?text=زهرة+الثالوث" }
-      ],
-      "مسلسلات_أجنبية": [
+],
+      "أفلام_عربية":        [
+
+],
+      "أفلام_أنمي":         [
+
+],
+      "مسلسلات_تركية":      [
+
+],
+      "مسلسلات_أجنبية":     [
 { title: "1899", img: "https://i.postimg.cc/dtb0ZPYT/1899.png" },
 { title: "Barbarians", img: "https://i.postimg.cc/Mp1pyP63/Barbarians.png" },
 { title: "Berlin", img: "https://i.postimg.cc/gjwYr4tD/Berlin.png" },
@@ -2383,33 +2410,14 @@
 { title: "متجر الاضاءة", img: "https://i.postimg.cc/JzL41fZ7/mtjr-lD.jpg" },
 { title: "متجر القتلة الكورية", img: "https://i.postimg.cc/5NwbksGh/mtjr-lqtl-lkwryh.png" },
 { title: "ون كيس الواقعي", img: "https://i.postimg.cc/HkzHTVT3/wn-bys-lwq-y-2023.png" },
-      ],
-      "مسلسلات_عربية": [
-{ title: "بهلول اعقل المجانين", img: "https://i.postimg.cc/28S662FR/bhlwl-ql-lmjnyn.png" },
-{ title: "اخوة الدم", img: "https://i.postimg.cc/tCvgVW21/khw-ldm.png" },
-{ title: "الدمعة الحمراء", img: "https://i.postimg.cc/7ZpYKDvw/ldm-lhmr.png" },
-{ title: "الفوارس", img: "https://i.postimg.cc/htJt8v52/lfwrs.png" },
-{ title: "الحسن والحسين", img: "https://i.postimg.cc/BvHZyysD/lhsn-wlhsyn.png" },
-{ title: "الختم والخاتم", img: "https://i.postimg.cc/CMmhWbyv/lkhtm-wlkhtm.png" },
-{ title: "الأمام احمد ابن حنبل", img: "https://i.postimg.cc/L659Rh2m/lmm-hmd-bn-hnbl.png" },
-{ title: "الموت القادم الى الشرق", img: "https://i.postimg.cc/TYsRPG3g/lmwt-lqdm-l-lshrq.png" },
-{ title: "الرسالة", img: "https://i.postimg.cc/Bb60qwWm/lrsl.png" },
-{ title: "الوعد", img: "https://i.postimg.cc/N0YZsPmR/lwd.png" },
-{ title: "الوعد ملحمة الحب والرحيل خلف ابن دعيجاء", img: "https://i.postimg.cc/VvT3zfWN/lwd-mlhm-lhb-wlrhyl-khlf-bn-dyj.png" },
-{ title: "الزير سالم", img: "https://i.postimg.cc/d1VXdkW1/lzyr-slm.png" },
-{ title: "مسلسل غليص", img: "https://i.postimg.cc/rsvYvhq0/mslsl-glys.png" },
-{ title: "مسلسل هارون الرشيد", img: "https://i.postimg.cc/76RB2BGs/mslsl-hrwn-lrshyd.png" },
-{ title: "مسلسل الحجاج بن يوسف الثقفي", img: "https://i.postimg.cc/WpFVfCn4/mslsl-lhjj-bn-ywsf-lthqfy.png" },
-{ title: "مسلسل القعقاع بن عمرو التميمي كاملة", img: "https://i.postimg.cc/65CXBZFJ/mslsl-lqq-bn-mrw-ltmymy-kml.png" },
-{ title: "مسلسل عمـــــر الخطاب", img: "https://i.postimg.cc/wBj85GMg/mslsl-mr-lkhtb.png" },
-{ title: "عنترة بن شداد", img: "https://i.postimg.cc/Px0gjf45/ntr-bn-shdd.png" },
+],
+      "مسلسلات_عربية":      [
+      
+],
+      "مسلسلات_مدبلجة":     [
 
-      ],
-      "مسلسلات_مدبلجة": [
-        { title: "وادي الذئاب مدبلج", img: "https://via.placeholder.com/200x300?text=مدبلج" },
-        { title: "قيامة أرطغرل مدبلج", img: "https://via.placeholder.com/200x300?text=قيامة+أرطغرل" }
-      ],
-      "مسلسلات_يمنية": [
+],
+      "مسلسلات_يمنية":      [
 { title: "4 كيني ميني", img: "https://i.postimg.cc/R0qmYGx9/4-kyny-myny.jpg" },
 { title: "برنامج ضيوف العيد", img: "https://i.postimg.cc/DzDh3s7G/brnmj-Dywf-l-yd.jpg" },
 { title: "برنامج هجمة مرتدة", img: "https://i.postimg.cc/rmrkVmpP/brnmj-hjmh-mrtdh.jpg" },
@@ -2480,8 +2488,28 @@
 { title: "عسل صافي", img: "https://i.postimg.cc/pTwPzj7v/sl-Sfy.png" },
 { title: "عصيد شو على قناة السعيدة", img: "https://i.postimg.cc/wxNqHWyj/Syd-shw-l-qnh-ls-ydh.jpg" },
 { title: "عيال قحطان", img: "https://i.postimg.cc/1XDsHthq/yl-qHTn.jpg" },
-      ],
-      "أنمي_مترجم": [
+],
+      "مسلسلات_تاريخية":    [
+{ title: "بهلول اعقل المجانين", img: "https://i.postimg.cc/28S662FR/bhlwl-ql-lmjnyn.png" },
+{ title: "اخوة الدم", img: "https://i.postimg.cc/tCvgVW21/khw-ldm.png" },
+{ title: "الدمعة الحمراء", img: "https://i.postimg.cc/7ZpYKDvw/ldm-lhmr.png" },
+{ title: "الفوارس", img: "https://i.postimg.cc/htJt8v52/lfwrs.png" },
+{ title: "الحسن والحسين", img: "https://i.postimg.cc/BvHZyysD/lhsn-wlhsyn.png" },
+{ title: "الختم والخاتم", img: "https://i.postimg.cc/CMmhWbyv/lkhtm-wlkhtm.png" },
+{ title: "الأمام احمد ابن حنبل", img: "https://i.postimg.cc/L659Rh2m/lmm-hmd-bn-hnbl.png" },
+{ title: "الموت القادم الى الشرق", img: "https://i.postimg.cc/TYsRPG3g/lmwt-lqdm-l-lshrq.png" },
+{ title: "الرسالة", img: "https://i.postimg.cc/Bb60qwWm/lrsl.png" },
+{ title: "الوعد", img: "https://i.postimg.cc/N0YZsPmR/lwd.png" },
+{ title: "الوعد ملحمة الحب والرحيل خلف ابن دعيجاء", img: "https://i.postimg.cc/VvT3zfWN/lwd-mlhm-lhb-wlrhyl-khlf-bn-dyj.png" },
+{ title: "الزير سالم", img: "https://i.postimg.cc/d1VXdkW1/lzyr-slm.png" },
+{ title: "مسلسل غليص", img: "https://i.postimg.cc/rsvYvhq0/mslsl-glys.png" },
+{ title: "مسلسل هارون الرشيد", img: "https://i.postimg.cc/76RB2BGs/mslsl-hrwn-lrshyd.png" },
+{ title: "مسلسل الحجاج بن يوسف الثقفي", img: "https://i.postimg.cc/WpFVfCn4/mslsl-lhjj-bn-ywsf-lthqfy.png" },
+{ title: "مسلسل القعقاع بن عمرو التميمي كاملة", img: "https://i.postimg.cc/65CXBZFJ/mslsl-lqq-bn-mrw-ltmymy-kml.png" },
+{ title: "مسلسل عمـــــر الخطاب", img: "https://i.postimg.cc/wBj85GMg/mslsl-mr-lkhtb.png" },
+{ title: "عنترة بن شداد", img: "https://i.postimg.cc/Px0gjf45/ntr-bn-shdd.png" },
+],
+      "أنمي_مترجم":         [
 { title: "91 Days", img: "https://i.postimg.cc/T2By27FB/91-Days.png" },
 { title: "Afro Samori", img: "https://i.postimg.cc/Kjtm8Ngy/Afro-Samori.png" },
 { title: "AGK", img: "https://i.postimg.cc/kXdnhkkM/AGK.png" },
@@ -2890,9 +2918,9 @@
   { title: "Wind Breaker Season 2", img: "https://i.postimg.cc/QC5vTpGk/Wind-Breaker-Season-2.png" },
   { title: "Yuusha Party wo Tsuihou sareta Shiromadoushi S Rank Boukensha ni", img: "https://i.postimg.cc/gc6CQPXX/Yuusha-Party-wo-Tsuihou-sareta-Shiromadoushi-S-Rank-Boukensha-ni.png" },
   { title: "Zutaboro Reijou wa Ane no Moto Konyakusha ni Dekiai sareru", img: "https://i.postimg.cc/kX30dhKj/Zutaboro-Reijou-wa-Ane-no-Moto-Konyakusha-ni-Dekiai-sareru.png" },
-      ],
-      "أنمي_مدبلج": [
-  { title: "أبراج مالوري ", img: "https://i.postimg.cc/bJRYwN9q/brj-mlwry-lmwsm-l-wl-lthny.png" },
+],
+      "أنمي_مدبلج":         [
+  { title: "أبراج مالوري الموسم الأول+الثاني", img: "https://i.postimg.cc/bJRYwN9q/brj-mlwry-lmwsm-l-wl-lthny.png" },
   { title: "أبطال الديجتال", img: "https://i.postimg.cc/SRNS2FgC/b-Tl-ldyjtl.png" },
   { title: "أفاتار اسطورة انج", img: "https://i.postimg.cc/3RhJhDpL/ftr-s-Twr-nj.png" },
   { title: "أسطورة كورا", img: "https://i.postimg.cc/G3qh0tpQ/s-Twr-kwr.png" },
@@ -2966,7 +2994,7 @@
   { title: "عدنان ولينا", img: "https://i.postimg.cc/T3WRWcJ7/dnn-wlyn.png" },
   { title: "عهد الاصدقاء", img: "https://i.postimg.cc/bvcq026z/hd-lSdq.png" },
   { title: "عالم غامبول المدهش الموسم الاول", img: "https://i.postimg.cc/MG7q9K41/lm-Gmbwl-lmdhsh-lmwsm-lwl.png" },
-      ]
+],
     };
 
     let currentMain = null;
@@ -3154,4 +3182,13 @@
     };
   </script>
 </body>
+<footer>
+<div class="marquee">
+  772005480 - 735820055 - 774252640 - 739798099 │ 
+  شبوة - عتق - أمام ثانوية حنيشان │ 
+  ©2025 مطابع أبوهيثم للدعاية والإعلان
+</div>
+</footer>
+</body>
+</html>
 </html>
