@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
  <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>مطابع أبوهيثم للدعاية والاعلان</title>
-<meta name="description" content="نحن مؤسسة إعلانية متخصصة في بيع وطباعة وتنفيذ جميع المواد الدعائية،
-ونوفر مجموعة واسعة من المنتجات الدعائية والترويجية،
-وغيرها من المواد التي تُصمَّم خصيصًا لتناسب احتياجاتك.">
-<meta name="keywords" content="مطابع أبوهيثم , مطابع ابوهيثم , مطابع ابوهيثم للدعاية والاعلان , مطابع أبوهيثم للدعاية والاعلان , طباعة , فواتير , أكواب , مخدات, دروع تذارية , مكاتب ">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>مطابع أبوهيثم للدعاية والإعلان</title>
+
+  <meta name="description" content="مطابع أبوهيثم للدعاية والإعلان تقدم خدمات الطباعة الاحترافية والفواتير والدروع التذكارية والأكواب والمخدات والمزيد. جودة عالية وأسعار تنافسية في اليمن.">
+  <meta name="keywords" content="مطابع أبوهيثم, دعاية وإعلان, طباعة فواتير, طباعة أكواب, طباعة مخدات, دروع تذكارية, تصميم دعائي, مطبعة في اليمن">
+
+  <!-- وسوم Open Graph (للمشاركة في فيسبوك، واتساب، تويتر وغيرها) -->
+  <meta property="og:title" content="مطابع أبوهيثم للدعاية والإعلان">
+  <meta property="og:description" content="خدمات طباعة وتصميم دعائي بجودة عالية في اليمن. فواتير، أكواب، مخدات، دروع تذكارية والمزيد.">
+  <meta property="og:image" content="https://i.postimg.cc/hP8C1HG6/image.png">
+  <meta property="og:url" content="https://abuhitham-net.github.io">
+  <meta name="twitter:card" content="summary_large_image">
+<!-- رابط Font Awesome للحصول على أيقونة واتساب رسمية -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<!-- زر واتساب عائم -->
+<a href="https://wa.me/967735820055" class="whatsapp-float" target="_blank" title="راسلنا عبر واتساب" aria-label="واتساب">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- تنسيق الزر -->
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    background-color: rgba(37, 211, 102, 0.5); /* أخضر شفاف */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 9999;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .whatsapp-float:hover {
+    background-color: rgba(37, 211, 102, 0.8); /* يزيد التعتيم عند المرور */
+    transform: scale(1.1);
+  }
+
+  .whatsapp-float i {
+    color: white;        /* لون الشعار */
+    font-size: 28px;     /* حجم الشعار */
+    display: block;
+    line-height: 0;
+  }
+</style>
   <style>
   	@font-face {
     font-family: 'Tajawal';
@@ -266,23 +312,20 @@ body.dark-mode .theme-toggle svg {
      </span>
     </div>
     <nav class="nav">
-     <ul>
-      <li>
-       <a href="#" id="section1Link">
-        الرئيسية
-       </a>
-      </li>
-      <li>
-       <a href="#" id="pillowsLink">
-        الاستراحة
-       </a>
-      </li>
-      <li>
-       <a href="#" id="contactLink">
-        التواصل معنا
-       </a>
-      </li>
-     </ul>
+<ul>
+  <li>
+    <a href="#" id="section1Link">المنتجات</a>
+  </li>
+  <li>
+    <a href="#services" id="servicesLink">خدمات التصميم</a>
+  </li>
+  <li>
+    <a href="#" id="pillowsLink">الاستراحة</a>
+  </li>
+  <li>
+    <a href="#" id="contactLink">التواصل معنا</a>
+  </li>
+</ul>
     </nav>
    </div>
   </header>
@@ -685,7 +728,7 @@ body.dark-mode .theme-toggle svg {
     cursor: pointer;
   }
   .tabs, .sub-tabs {
-    margin: 20px 0;
+    margin: 0px 0;
     text-align: center;
   }
   .tab-button, .sub-tab-button {
@@ -740,26 +783,31 @@ body.dark-mode .theme-toggle svg {
   }
 </style>
 <script>
-  const categories = {
-    "أفلام": {
-      "أفلام_أجنبية": "أفلام أجنبية",
-      "أفلام_هندية": "أفلام هندية",
-      "أفلام_عربية": "أفلام عربية",
-    },
-    "مسلسلات": {
-      "مسلسلات_تركية": "مسلسلات تركية",
-      "مسلسلات_أجنبية": "مسلسلات أجنبية",
-      "مسلسلات_عربية": "مسلسلات عربية",
-      "مسلسلات_مدبلجة": "مسلسلات مدبلجة",
-      "مسلسلات_يمنية": "مسلسلات يمنية",
-      "مسلسلات_تاريخية": "مسلسلات تاريخية"
-    },
-    "أنمي": {
-      "أنمي_مترجم": "أنمي مترجم",
-      "أنمي_مدبلج": "أنمي مدبلج",
-      "أفلام_أنمي": "أفلام أنمي",
-    }
-  };
+const categories = {
+  "أفلام": {
+    "أفلام_أجنبية": "أفلام أجنبية",
+    "أفلام_هندية": "أفلام هندية",
+    "أفلام_عربية": "أفلام عربية"
+  },
+  "مسلسلات": {
+    "مسلسلات_تركية": "مسلسلات تركية",
+    "مسلسلات_أجنبية": "مسلسلات أجنبية",
+    "مسلسلات_عربية": "مسلسلات عربية",
+    "مسلسلات_مدبلجة": "مسلسلات مدبلجة",
+    "مسلسلات_يمنية": "مسلسلات يمنية",
+    "مسلسلات_تاريخية": "مسلسلات تاريخية"
+  },
+  "أنمي": {
+    "أنمي_مترجم": "أنمي مترجم",
+    "أنمي_مدبلج": "أنمي مدبلج",
+    "أفلام_أنمي": "أفلام أنمي"
+  },
+  "قسم الألعاب": {
+    "ألعاب_الجوال": "ألعاب الجوال",
+    "ألعاب_الكمبيوتر": "ألعاب الكمبيوتر",
+    "ألعاب_البلايستيشن": "ألعاب البلايستيشن"
+  }
+};
 
     const data = {
       "أفلام_أجنبية":       [
@@ -3849,6 +3897,15 @@ body.dark-mode .theme-toggle svg {
   { title: "عهد الاصدقاء", img: "https://i.postimg.cc/bvcq026z/hd-lSdq.png" },
   { title: "عالم غامبول المدهش الموسم الاول", img: "https://i.postimg.cc/MG7q9K41/lm-Gmbwl-lmdhsh-lmwsm-lwl.png" },
 ],
+      "ألعاب_الجوال":[
+
+], 
+      "ألعاب_الكمبيوتر":[
+
+], 
+      "ألعاب_البلايستيشن":[
+
+], 
     };
 
   function getFavs() {
@@ -3993,6 +4050,131 @@ body.dark-mode .theme-toggle svg {
     });
   }
 </script>
+<div class="section" id="services" style="display: none; padding-top: 0px;">
+  <h2>تصميم شعارات</h2>
+  <div class="section-line"></div>
+   <p style="margin-bottom: 10px; color: #555; text-align: center;">
+تصميم شعارات احترافية مبتكرة 
+   </p>
+   <div class="product-slider">
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/vZ4N1qG7/0.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/d3917kkz/1.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/gcyrt5SN/10.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/NfpFBXwX/11.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/zGvBBfJc/12.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/P57q8kJr/13.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/DzbwrY4Q/14.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/C5M0Qv5Q/15.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/LXK6NBjc/2.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/50B9GY36/3.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/6QRB22FY/4.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/wvpghxpH/5.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/W3wjSRNZ/6.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/6qHKJdG5/7.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/2jTrZfXR/8.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم شعارات" src="https://i.postimg.cc/DyZFQYtW/9.jpg"/>
+</div>
+      </div>
+  <div class="section"></div>
+<h2>تصميم كروت اعمال</h2>
+  <div class="section-line"></div>
+   <p style="margin-bottom: 10px; color: #555; text-align: center;">
+تصميم كروت بجودة احترافية ولمسة إبداعية
+   </p>
+   <div class="product-slider">
+<div class="product-card">
+  <img alt="تصميم كروت أعمال" src="https://i.postimg.cc/pXSL7Hvb/1.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم كروت أعمال" src="https://i.postimg.cc/nL4VC9Dp/2.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم كروت أعمال" src="https://i.postimg.cc/HLDsY9j6/3.jpg"/>
+</div>
+      </div> 
+        <div class="section"></div>
+<h2>تصميم بوسترات يوم الجمعه</h2>
+  <div class="section-line"></div>
+   <p style="margin-bottom: 10px; color: #555; text-align: center;">
+تصميم بوسترات ليوم الجمعة بأذواق هادئة وكلمات مؤثرة
+   </p>
+   <div class="product-slider">
+<div class="product-card">
+  <img alt="تصميم بوسترات يوم الجمعة" src="https://i.postimg.cc/tTD6w4pt/1.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم بوسترات يوم الجمعة" src="https://i.postimg.cc/hGLT80YY/2.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم بوسترات يوم الجمعة" src="https://i.postimg.cc/63BRMvJp/3.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم بوسترات يوم الجمعة" src="https://i.postimg.cc/QMGcWzf5/4.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم بوسترات يوم الجمعة" src="https://i.postimg.cc/D0ZGT3zV/5.jpg"/>
+</div>
+          </div>
+                  <div class="section"></div>
+<h2>تصميم تهاني اعراس</h2>
+  <div class="section-line"></div>
+   <p style="margin-bottom: 10px; color: #555; text-align: center;">
+تصميم تهاني الأعراس بذوق راقٍ وتصميم يُعبّر عن الفرحة
+   </p>
+   <div class="product-slider">
+   	<div class="product-card">
+  <img alt="تصميم تهاني أعراس" src="https://i.postimg.cc/76s6SB3w/1.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم تهاني أعراس" src="https://i.postimg.cc/VNF5ks5S/2.jpg"/>
+</div>
+<div class="product-card">
+  <img alt="تصميم تهاني أعراس" src="https://i.postimg.cc/XqrvLwLF/3.jpg"/>
+</div>
+          </div>
+                  <div class="section"></div>
+<h2>تصميم مواقع اكترونيه</h2>
+  <div class="section-line"></div>
+   <p style="margin-bottom: 10px; color: #555; text-align: center;">
+تصميم مواقع إلكترونية احترافية تعكس هويتك وتُبرز أعمالك
+   </p>
+   <div class="product-slider">
+    <div class="product-card">
+     <img alt="تصميم مواقع اكترونيه" src="https://i.postimg.cc/DZcNJJT6/1.jpg"/>
+     </div>
+          </div>
+               </div>      
   <div class="section" id="contact" style="display: none;">
    <h2>
     التواصل معنا
@@ -4081,10 +4263,26 @@ body.dark-mode .theme-toggle svg {
   <h2 style="margin-top: 40px;">موقعنا</h2>
   <div class="section-line"></div>
   <p style="font-size: 16px; color: #555;">اليمن، شبوة، عتق، أمام ثانوية حنيشان</p>
-  <a href="https://maps.app.goo.gl/amGoQfrvb8XVjXmm6" target="_blank" class="google-map-btn">
+  <a href="https://maps.app.goo.gl/G68EHv8LvgRYAJbQA" target="_blank" class="google-map-btn">
   العرض على خرائط جوجل
 </a>
-</div>
+  <h2 style="margin-top: 40px;">من نحن</h2>
+  <div class="section-line"></div>
+  <p style="font-size: 16px; color: #555;">نحن مؤسسة إعلانية متخصصة في بيع وطباعة وتنفيذ جميع المواد الدعائية، نحرص على تقديم حلول إبداعية تساعدك في إبراز علامتك التجارية بطريقة مميزة واحترافية.
+
+نوفر مجموعة واسعة من المنتجات الدعائية والترويجية، مثل:
+
+•الجرمات  •الكوافي
+
+•الأقلام   •الساعات
+
+•الأكواب   •الميداليات
+
+•الأكياس
+... 
+وغيرها من المواد التي تُصمَّم خصيصًا لتناسب احتياجاتك.
+
+نعتمد على الجودة، الالتزام، والتعامل المرن مع عملائنا لنكون الشريك المفضل في حملاتهم الإعلانية.</p>
 </html>
     <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -4132,6 +4330,20 @@ body.dark-mode .theme-toggle svg {
     toggleBtn.classList.toggle('icon-toggle-dark');
     document.body.classList.toggle('dark-mode');
   });
+document.addEventListener("click", function (e) {
+  const card = e.target.closest(".movie");
+  if (!card) return;
+
+  const activeMain = document.querySelector("#mainTabs .tab-button.active");
+  if (!activeMain || activeMain.textContent.trim() !== "قسم الألعاب") return;
+
+  // نافذة تأكيد منبثقة
+  const confirmed = window.confirm("جاهز تدخل جو اللعبة؟ 🎮 اضغط حسنًا للانتقال إلى الكتالوج ومشاهدة الفيديو الترويجي الخاص باللعبة وقراءة التفاصيل... ");
+
+  if (confirmed) {
+    window.location.href = "https://wa.me/c/967735820055"; // استبدل بالرابط المطلوب
+  }
+});
 </script>
 </body>
 </html>
