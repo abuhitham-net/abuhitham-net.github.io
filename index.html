@@ -279,6 +279,31 @@ body.dark-mode .theme-toggle svg {
     .nav {
   margin-bottom:-17px;
 } 
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;         /* لا يسمح بسطر جديد */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;          /* يمنع الخروج من الشاشة */
+  background: none;
+}
+
+.nav-menu li {
+  flex: 1 1 auto;            /* يسمح بالتصغير التلقائي */
+  text-align: center;
+}
+
+.nav-menu li a {
+  display: block;
+  padding: 10px 5px;         /* تقليل الهوامش */
+  font-size: 13px;           /* تصغير الخط */
+  color: black;
+  text-decoration: none;
+  white-space: nowrap;       /* يمنع كسر الكلمات */
+  background: none;
+} 
   </style>
  </head>
  <body>
@@ -314,16 +339,14 @@ body.dark-mode .theme-toggle svg {
       مطابع أبوهيثم للدعاية والإعلان
      </span>
     </div>
-    <nav class="nav">
-<ul>
-  <div class="nav-container">
+<nav class="nav">
   <ul class="nav-menu">
     <li><a href="#" id="section1Link">المنتجات</a></li>
     <li><a href="#services" id="servicesLink">خدمات التصميم</a></li>
     <li><a href="#" id="pillowsLink">الاستراحة</a></li>
     <li><a href="#" id="contactLink">التواصل معنا</a></li>
   </ul>
-    </nav>
+</nav>
    </div>
    <div>
   </header>
