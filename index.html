@@ -267,7 +267,7 @@ body.dark-mode .theme-toggle svg {
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      border-radius: 8px;
+      border-radius: 8;;px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       background: #fff;
     }
@@ -276,6 +276,9 @@ body.dark-mode .theme-toggle svg {
       height: 100%;
       object-fit: contain;
     }
+    .nav {
+  margin-bottom:-17px;
+} 
   </style>
  </head>
  <body>
@@ -304,7 +307,7 @@ body.dark-mode .theme-toggle svg {
   </div>
 </button>
   <header class="header">
-   <div class="container" style="flex-direction: column; align-items: flex-start; gap: 10px;">
+   <div class="container" style="flex-direction: column; align-items: flex-start; gap:0px;">
     <div class="logo">
      <img alt="شعار أبوهيثم" src="https://i.postimg.cc/hP8C1HG6/image.png"/>
      <span class="site-title">
@@ -313,21 +316,16 @@ body.dark-mode .theme-toggle svg {
     </div>
     <nav class="nav">
 <ul>
-  <li>
-    <a href="#" id="section1Link">المنتجات</a>
-  </li>
-  <li>
-    <a href="#services" id="servicesLink">خدمات التصميم</a>
-  </li>
-  <li>
-    <a href="#" id="pillowsLink">الاستراحة</a>
-  </li>
-  <li>
-    <a href="#" id="contactLink">التواصل معنا</a>
-  </li>
-</ul>
+  <div class="nav-container">
+  <ul class="nav-menu">
+    <li><a href="#" id="section1Link">المنتجات</a></li>
+    <li><a href="#services" id="servicesLink">خدمات التصميم</a></li>
+    <li><a href="#" id="pillowsLink">الاستراحة</a></li>
+    <li><a href="#" id="contactLink">التواصل معنا</a></li>
+  </ul>
     </nav>
    </div>
+   <div>
   </header>
   <div class="section" id="section1">
    <h2>
