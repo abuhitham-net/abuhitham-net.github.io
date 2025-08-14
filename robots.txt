@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abuhitham-net.github.io/sitemap.xml
