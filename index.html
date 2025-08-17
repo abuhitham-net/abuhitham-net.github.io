@@ -1578,28 +1578,6 @@ const categories = {
 };
 
 /* ========== 2) البيانات (مثالك) ========== */
-const data = {
-  "أفلام_أجنبية": [
-    { title: "11 2018", img: "https://i.postimg.cc/c4RdHx7K/11-2018.jpg" },
-    { title: "12 Strong 2018", img: "https://i.postimg.cc/gjRm3dfT/12-Strong-2018.jpg" },
-    { title: "13 Bom Di Jakarta 2024", img: "https://i.postimg.cc/x1gYv64n/13-Bom-Di-Jakarta-2024.png" }
-  ],
-  "أفلام_هندية": [],
-  "أفلام_عربية": [],
-  "مسلسلات_تركية": [],
-  "مسلسلات_أجنبية": [],
-  "مسلسلات_عربية": [],
-  "مسلسلات_مدبلجة": [],
-  "مسلسلات_يمنية": [],
-  "مسلسلات_تاريخية": [],
-  "أنمي_مترجم": [],
-  "أنمي_مدبلج": [],
-  "أفلام_أنمي": [],
-  "ألعاب_الجوال": [],
-  "ألعاب_الكمبيوتر": [],
-  "ألعاب_البلايستيشن": []
-};
-
     const data = {
       "أفلام_أجنبية":       [
 { title: "11 2018", img: "https://i.postimg.cc/c4RdHx7K/11-2018.jpg" },
@@ -4698,6 +4676,8 @@ const data = {
 
 ], 
     };
+
+
 
 /* ========== 3) مفضلة + بحث ========== */
 function getFavs(){ try{ return JSON.parse(localStorage.getItem('favorites')||'[]'); }catch(_){ return []; } }
