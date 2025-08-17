@@ -778,17 +778,44 @@ body.dark-mode .theme-toggle svg {
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  new Swiper(".mySlider", {
-    slidesPerView: 3,
-    spaceBetween: 10,
-    loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false
-    },
-    grabCursor: true
-  });
+new Swiper(".mySlider", {
+  loop: true,              // 🔁 حلقة
+  grabCursor: true,        // 👆 يسمح بالسحب يمين / يسار
+  autoplay: false,         // ❌ بدون تشغيل تلقائي
+  spaceBetween: 10,
+  breakpoints: {
+    0:    { slidesPerView: 3 },
+    768:  { slidesPerView: 5 },
+    1024: { slidesPerView: 7 }
+  }
+});
 </script>
+
+<style>
+/* صور السلايدر */
+.mySlider .swiper-slide img {
+  width: auto;              /* يسمح بعرض أكثر من صورة في الصف */
+  max-width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 13px;
+}
+
+/* حاوية السلايدر */
+.mySlider {
+  display: block;
+  height: 140px;
+  overflow: hidden;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ضمان أن السلايدر يملأ العرض بالكامل */
+.mySlider .swiper-wrapper {
+  width: 100%;
+}
+</style>
 
 <style>
   .mySlider .swiper-slide img {
@@ -803,8 +830,23 @@ body.dark-mode .theme-toggle svg {
 } 
 .mySlider {
   display: block;
-  height: 140px;          /* نفس ارتفاع الصورة */
+  height: 140px;
   overflow: hidden;
+  width: 100%;              /* ✅ يملأ عرض الصفحة */
+  margin-left: auto;        /* ✅ يثبته في المنتصف */
+  margin-right: auto;
+} 
+.mySlider .swiper-slide img {
+  width:auto;         /* ✅ يسمح بعرض أكثر من صورة */
+  max-width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:13px;
+} 
+
+/* ضمان أن السلايدر يملأ العرض بالكامل (فتظهر 3 شرائح في الجوال) */
+.mySlider .swiper-wrapper {
+  width: 100%;
 } 
 </style>
   <!-- بحث + أزرار -->
@@ -1046,10 +1088,10 @@ document.addEventListener("DOMContentLoaded", () => {
 .btn {
   appearance: none;
   border: 0;
-  padding: 5px 14px;
+  padding: 8px 14px;
   border-radius: 999px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 13px;
   box-shadow: 0 2px 6px rgba(0,0,0,.08);
   transition: transform .05s ease, box-shadow .2s ease;
 }
@@ -1149,23 +1191,18 @@ document.addEventListener("DOMContentLoaded", () => {
 /* شبكة: جوال 3 أعمدة — كمبيوتر 7 */
 .grid{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* جوال */
   gap: 14px;
   margin-top: 12px;
 }
-@media (min-width: 1024px){
-  .grid{ grid-template-columns: repeat(7, 1fr); }
+
+@media (min-width: 768px){
+  .grid { grid-template-columns: repeat(3, 1fr); } /* لابتوب */
 }
 
-/* البطاقة */
-.movie{
-  background:#fff;
-  border:1px solid #eee;
-  border-radius:12px;
-  overflow:hidden;                 /* يمنع أي تمدد يطلع برا البطاقة */
-  box-shadow:0 2px 6px rgba(0,0,0,.06);
-  text-align:center;
-}
+@media (min-width: 1024px){
+  .grid { grid-template-columns: repeat(5, 1fr); } /* كمبيوتر */
+} 
 
 /* إطار الصورة ثابت (بوستر عمودي 2:3) */
 .movie .img-wrap{
