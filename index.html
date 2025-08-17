@@ -742,10 +742,71 @@ body.dark-mode .theme-toggle svg {
    </div>
   </div>
 <!-- ========== قسم الاستراحة كامل (محدّث) ========== -->
-<div class="section" id="pillows" style="display:block; padding-top: 40px;" dir="rtl">
+<div class="section" id="pillows" style="display:block; padding-top: 1px;" dir="rtl">
   <h2 style="text-align:center;margin:0 0 12px">الاستراحة</h2>
   <div class="section-line"></div>
+<!-- Swiper Styles -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+<!-- ===== Slider (Cards) ===== -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<div class="swiper mySlider">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="العرض/1.png"  alt="1" /></div>
+    <div class="swiper-slide"><img src="العرض/2.png"  alt="2" /></div>
+    <div class="swiper-slide"><img src="العرض/3.png"  alt="3" /></div>
+    <div class="swiper-slide"><img src="العرض/4.png"  alt="4" /></div>
+    <div class="swiper-slide"><img src="العرض/5.png"  alt="5" /></div>
+    <div class="swiper-slide"><img src="العرض/6.png"  alt="6" /></div>
+    <div class="swiper-slide"><img src="العرض/7.png"  alt="7" /></div>
+    <div class="swiper-slide"><img src="العرض/8.png"  alt="8" /></div>
+    <div class="swiper-slide"><img src="العرض/9.png"  alt="9" /></div>
+    <div class="swiper-slide"><img src="العرض/10.png" alt="10" /></div>
+    <div class="swiper-slide"><img src="العرض/11.png" alt="11" /></div>
+    <div class="swiper-slide"><img src="العرض/12.png" alt="12" /></div>
+    <div class="swiper-slide"><img src="العرض/13.png" alt="13" /></div>
+    <div class="swiper-slide"><img src="العرض/14.png" alt="14" /></div>
+    <div class="swiper-slide"><img src="العرض/15.png" alt="15" /></div>
+    <div class="swiper-slide"><img src="العرض/16.png" alt="16" /></div>
+    <div class="swiper-slide"><img src="العرض/17.png" alt="17" /></div>
+    <div class="swiper-slide"><img src="العرض/18.png" alt="18" /></div>
+    <div class="swiper-slide"><img src="العرض/19.png" alt="19" /></div>
+    <div class="swiper-slide"><img src="العرض/20.png" alt="20" /></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  new Swiper(".mySlider", {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    grabCursor: true
+  });
+</script>
+
+<style>
+  .mySlider .swiper-slide img {
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:13px;
+  }
+  ..mySlider{
+  position:relative;
+  top:-500px;  /* عدّل الرقم حتى تحصل على نفس الشكل */
+} 
+.mySlider {
+  display: block;
+  height: 140px;          /* نفس ارتفاع الصورة */
+  overflow: hidden;
+} 
+</style>
   <!-- بحث + أزرار -->
   <div class="ui-actions" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0 10px;">
     <input type="text" id="searchBox" placeholder="ابحث عن محتوى..."
@@ -772,7 +833,7 @@ body.dark-mode .theme-toggle svg {
 
       <label class="field">
         <span>رقم جوالك <b>*</b></span>
-        <input id="orderPhone" name="entry.272696342" required inputmode="tel" placeholder="05xxxxxxxx" autocomplete="off">
+        <input id="orderPhone" name="entry.272696342" required inputmode="tel" placeholder="(+967) 77 او 73 او، 71 . . . . " autocomplete="off">
       </label>
 
       <label class="field field-full">
@@ -931,18 +992,9 @@ document.addEventListener("DOMContentLoaded", () => {
   #ordersWidget.is-open{display:block}
 
   /* حاوية النتائج */
-  #ordersTable{padding:0;border-radius:14px}
-
+  
   /* بطاقة كل طلب */
-  .order-card{
-    direction:rtl;
-    background:#fff;
-    border:1px solid #e5e7eb;
-    border-radius:14px;
-    box-shadow:0 6px 18px rgba(0,0,0,.06);
-    padding:12px 14px;
-    margin:12px 0;
-  }
+  
 
   /* سطر (Label —— Value) */
   .kv-row{
@@ -975,11 +1027,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </style>
 <!-- ===== تنسيقات خفيفة + الشبكة Responsive ===== -->
 <style>
-  /* الحاوية الرئيسية للقسم */
-#pillows {
-  max-width: 1100px;
-  margin: auto;
-}
+  
 .movie .img-wrap {
   width: 150px;               /* عرض الصندوق ثابت */
   margin: auto;               /* يجعل الصندوق في المنتصف */
@@ -998,7 +1046,7 @@ document.addEventListener("DOMContentLoaded", () => {
 .btn {
   appearance: none;
   border: 0;
-  padding: 10px 16px;
+  padding: 5px 14px;
   border-radius: 999px;
   cursor: pointer;
   font-size: 15px;
@@ -1007,7 +1055,7 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 .btn:active {
   transform: translateY(1px);
-  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  box-shadow: 0 1px 1px rgba(0,0,0,.08);
 }
 .btn-fav    { background: #ffeaa7; }
 .btn-orders { background: #a3e4d7; }
@@ -1016,8 +1064,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* أزرار التبويب */
 .tab-button, .sub-tab-button {
-  padding: 10px 15px;
-  margin: 5px;
+  padding: 1px 10px;
+  margin: 4px;
   border: none;
   border-radius: 10px;
   background-color: #e9ecef;
@@ -1480,64 +1528,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
  
   /* أخفِ أي نص مصدر/اسم ورقة */
-  #ordersInfo { display: none !important; }
 
   /* تحويل الجدول الحالي إلى بطاقات بخطوط أفقية */
-  #ordersTable thead { display: none; }
-
-  #ordersTable table,
-  #ordersTable tbody,
-  #ordersTable tr,
-  #ordersTable td {
-    display: block;
-    width: 100%;
-  }
+  
 
   /* بطاقة لكل صف */
-  #ordersTable tr {
-    direction: rtl;
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(0,0,0,.06);
-    padding: 12px 14px;
-    margin: 12px 0;
-  }
+ 
 
   /* سطر (label ——— value) */
-  #ordersTable td {
-    border: 0;
-    padding: 8px 0;
-    display: grid;
-    grid-template-columns: auto 1fr auto; /* label | dashed line | value */
-    align-items: baseline;
-    column-gap: 10px;
-    white-space: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
+  
 
-  #ordersTable td::before {
-    content: attr(data-label);
-    font-weight: 800;
-    color: #374151;
-  }
 
-  #ordersTable td::after {
-    content: "";
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0, #9ca3af 50%, transparent 100%);
-    background-size: 12px 1px;
-    opacity: .35;
-    margin-top: 2px;
   }
-
-  #ordersTable td .ow-value {
-    color: #111827;
-    justify-self: end;
-    direction: rtl;
-  }
-
   /* تحسينات اختيارية لألوان بعض الحقول */
   #ordersTable td[data-label="الاسم"]   .ow-value { color:#0f766e; }
   #ordersTable td[data-label="رقم جوالك"],
@@ -1576,6 +1578,28 @@ const categories = {
 };
 
 /* ========== 2) البيانات (مثالك) ========== */
+const data = {
+  "أفلام_أجنبية": [
+    { title: "11 2018", img: "https://i.postimg.cc/c4RdHx7K/11-2018.jpg" },
+    { title: "12 Strong 2018", img: "https://i.postimg.cc/gjRm3dfT/12-Strong-2018.jpg" },
+    { title: "13 Bom Di Jakarta 2024", img: "https://i.postimg.cc/x1gYv64n/13-Bom-Di-Jakarta-2024.png" }
+  ],
+  "أفلام_هندية": [],
+  "أفلام_عربية": [],
+  "مسلسلات_تركية": [],
+  "مسلسلات_أجنبية": [],
+  "مسلسلات_عربية": [],
+  "مسلسلات_مدبلجة": [],
+  "مسلسلات_يمنية": [],
+  "مسلسلات_تاريخية": [],
+  "أنمي_مترجم": [],
+  "أنمي_مدبلج": [],
+  "أفلام_أنمي": [],
+  "ألعاب_الجوال": [],
+  "ألعاب_الكمبيوتر": [],
+  "ألعاب_البلايستيشن": []
+};
+
     const data = {
       "أفلام_أجنبية":       [
 { title: "11 2018", img: "https://i.postimg.cc/c4RdHx7K/11-2018.jpg" },
@@ -4821,7 +4845,6 @@ function showContent(){
   function openForm(){
     formBox.style.display='block'; addBtn.textContent='✖ إغلاق الطلب';
     if (ordersBox) ordersBox.style.display='none';
-    setTimeout(()=> nameEl?.focus(), 10);
   }
   function closeForm(){ formBox.style.display='none'; addBtn.textContent='➕ إضافة طلب'; }
   function toggleForm(){ isVisible(formBox) ? closeForm() : openForm(); }
@@ -4917,7 +4940,7 @@ document.getElementById('searchBox').addEventListener('input', ()=>{
 });
 document.getElementById('showFavsBtn').addEventListener('click', ()=>{
   showFavsOnly = !showFavsOnly;
-  document.getElementById('showFavsBtn').textContent = showFavsOnly ? 'العودة' : '⭐️ المفضلة';
+  document.getElementById('showFavsBtn').textContent = showFavsOnly ? 'العودة ↩️' : '⭐️ المفضلة';
   showContent();
 });
 
@@ -5462,12 +5485,7 @@ document.addEventListener("click", function (e) {
 <!-- سكربت العرض الأفقي (الذي أرسلته أنت) -->
 <script>
   // هذا هو الكود الذي وضعته في رسالتك:
-  const FIELD_ALIASES = {
-    "timestamp": ["timestamp","طابع زمني","الوقت","Time","Date"],
-    "name": ["الاسم","Name"],
-    "phone": ["رقم جوالك","الجوال","Phone","Mobile"],
-    "need": ["المطلوب","الطلب","Requirement"],
-  };
+  
   function findColIndex(cols, keys) { /* ... */ }
   function renderCards(gviz) { /* ... */ }
   
