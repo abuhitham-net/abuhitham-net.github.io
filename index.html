@@ -988,7 +988,10 @@ const SHEET_NAMES = ["ردود النموذج 1","الطلبات","طلبات","
 
   showBtn.addEventListener("click", () => {
     const open = ordersWidget.classList.toggle("is-open");
-    if (open) loadOrders();
+if (open){
+  ordersTable.innerHTML = "";   // 🟢 يمسح أية تنسيقات سابقة
+  loadOrders();
+}
   });
 
   refreshBtn?.addEventListener("click", (e) => {
@@ -5487,6 +5490,7 @@ document.addEventListener("click", function (e) {
 </script>
 </body>
 </html>
+
 
 
 
