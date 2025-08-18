@@ -378,13 +378,13 @@ body.dark-mode .theme-toggle svg {
    </div>
    <div>
   </header>
-  <div class="section" id="section1">
+  <div class="section" id="section1"style="display: none; padding-top: 45px;">
    <h2>
     دروع اكريليك
    </h2>
    <div class="section-line">
    </div>
-   <p style="margin-bottom: 10px; color: #555; text-align: center;">
+   <p style="margin-bottom: 40px; color: #555; text-align: center;">
     دروع اكريليك أنيقة للتكريم والتقدير بتصاميم احترافية.
    </p>
    <div class="product-slider">
@@ -742,7 +742,7 @@ body.dark-mode .theme-toggle svg {
    </div>
   </div>
 <!-- ========== قسم الاستراحة كامل (محدّث) ========== -->
-<div class="section" id="pillows" style="display:block; padding-top: 1px;" dir="rtl">
+<div class="section" id="pillows" style="display: none; padding-top: 45px;">
   <h2 style="text-align:center;margin:0 0 12px">الاستراحة</h2>
   <div class="section-line"></div>
 <!-- Swiper Styles -->
@@ -792,62 +792,46 @@ new Swiper(".mySlider", {
 </script>
 
 <style>
-/* صور السلايدر */
-.mySlider .swiper-slide img {
-  width: auto;              /* يسمح بعرض أكثر من صورة في الصف */
-  max-width: 100%;
+	.rest-content{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* جوال */
+  gap: 12px;
+  justify-content: center;                /* ✅ توسيط داخل الحاوية */
+}
+
+/* كمبيوتر */
+@media (min-width:1024px){
+  .rest-content{
+    grid-template-columns: repeat(1, 6fr);
+    justify-content: center;              /* إبقاء التوسيط */
+  }
+} 
+.mySlider {
+  display: block;
   height: 140px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mySlider .swiper-slide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 13px;
 }
-
-/* حاوية السلايدر */
-.mySlider {
-  display: block;
-  height: 140px;
-  overflow: hidden;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ضمان أن السلايدر يملأ العرض بالكامل */
-.mySlider .swiper-wrapper {
-  width: 100%;
-}
-</style>
-
-<style>
-  .mySlider .swiper-slide img {
-    width:100%;
-    height:140px;
-    object-fit:cover;
-    border-radius:13px;
-  }
-  ..mySlider{
-  position:relative;
-  top:-500px;  /* عدّل الرقم حتى تحصل على نفس الشكل */
-} 
-.mySlider {
-  display: block;
-  height: 140px;
-  overflow: hidden;
-  width: 100%;              /* ✅ يملأ عرض الصفحة */
-  margin-left: auto;        /* ✅ يثبته في المنتصف */
-  margin-right: auto;
-} 
-.mySlider .swiper-slide img {
-  width:auto;         /* ✅ يسمح بعرض أكثر من صورة */
-  max-width:100%;
-  height:140px;
+/* داخل السلايدر – الوضع الافتراضي للجوال والتابلت */
+.mySlider .swiper-slide img{
   object-fit:cover;
-  border-radius:13px;
-} 
+}
 
-/* ضمان أن السلايدر يملأ العرض بالكامل (فتظهر 3 شرائح في الجوال) */
-.mySlider .swiper-wrapper {
-  width: 100%;
-} 
+/* في الكمبيوتر (عند 7 صور في الصف) */
+@media (min-width:1024px){
+  .mySlider .swiper-slide img{
+    object-fit:contain;
+  }
+}
 </style>
   <!-- بحث + أزرار -->
   <div class="ui-actions" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0 10px;">
@@ -915,7 +899,7 @@ new Swiper(".mySlider", {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const SHEET_ID = "1XDUXANbr508qG0PoThgkHRCnC2fHPNxaBsbw0booAPE";
-  const SHEET_NAMES = ["الطلبات","طلبات","Orders","Sheet1"];
+const SHEET_NAMES = ["ردود النموذج 1","الطلبات","طلبات","Orders","Sheet1"];
 
   const showBtn = document.getElementById("showOrdersBtn");
   const ordersWidget = document.getElementById("ordersWidget");
@@ -1071,7 +1055,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <style>
   
 .movie .img-wrap {
-  width: 150px;               /* عرض الصندوق ثابت */
+  width: 100%;               /* عرض الصندوق ثابت */
   margin: auto;               /* يجعل الصندوق في المنتصف */
   background: #f3f3f3;
   overflow: hidden;
@@ -1120,47 +1104,40 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 
 /* شبكة البطاقات */
-.grid {
+/* الجوال */
+.grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* جوال: 3 أعمدة */
-  gap: 14px;
+  gap:14px;
+  justify-content:center;
+  grid-template-columns: repeat(2,1fr) !important;
 }
 
-/* تابلت صغير */
-@media (min-width: 640px) {
-  .grid { grid-template-columns: repeat(4, 1fr); }
-}
-
-/* تابلت */
-@media (min-width: 768px) {
-  .grid { grid-template-columns: repeat(5, 1fr); }
-}
-
-/* كمبيوتر */
-@media (min-width: 1024px) {
-  .grid { grid-template-columns: repeat(7, 1fr); }
+/* الكمبيوتر */
+@media (min-width:1024px){
+  .grid{
+    grid-template-columns: repeat(6,1fr) !important;
+    justify-content:center !important;
+  }
 }
 
 /* البطاقة */
-.movie {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  overflow: visible;
-  box-shadow: 0 2px 6px rgba(0,0,0,.06);
-  text-align: center;
-}
+.movie{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 2px 6px rgba(0,0,0,.06);
+  text-align:center;
+  width: 100%;      /* ✅ يملأ عرض العمود في الشبكة */
+  max-width:100%;
+} 
 
 /* غلاف الصورة */
 .movie .img-wrap {
   width: 100%;
-  aspect-ratio: 2 / 3; /* بوستر عمودي */
-  background: #f3f3f3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+  height: auto;
+  margin: auto;
+} 
 
 /* الصورة داخل الغلاف */
 .movie .img-wrap img {
@@ -1188,21 +1165,6 @@ document.addEventListener("DOMContentLoaded", () => {
   color: #9aa0a6;
   margin: 3px 0 8px;
 }
-/* شبكة: جوال 3 أعمدة — كمبيوتر 7 */
-.grid{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* جوال */
-  gap: 14px;
-  margin-top: 12px;
-}
-
-@media (min-width: 768px){
-  .grid { grid-template-columns: repeat(3, 1fr); } /* لابتوب */
-}
-
-@media (min-width: 1024px){
-  .grid { grid-template-columns: repeat(5, 1fr); } /* كمبيوتر */
-} 
 
 /* إطار الصورة ثابت (بوستر عمودي 2:3) */
 .movie .img-wrap{
@@ -1284,13 +1246,6 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 #customOrderForm .card-title{
   margin:0 0 12px; text-align:center; font-size:18px; font-weight:700;
-}
-
-/* شبكة الحقول: موبايل عمود واحد، شاشات أكبر عمودان */
-#customOrderForm .form-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
-@media (min-width:768px){
-  #customOrderForm .form-grid{ grid-template-columns:1fr 1fr; }
-  #customOrderForm .form-grid .field-full{ grid-column:1 / -1; }
 }
 
 /* الحقول */
@@ -1582,6 +1537,21 @@ document.addEventListener("DOMContentLoaded", () => {
   #ordersTable td[data-label="رقم جوالك"],
   #ordersTable td[data-label="رقم الجوال"] .ow-value { direction:ltr; }
   #ordersTable td[data-label="المطلوب"] .ow-value { color:#b45309; }
+  .section {
+  padding-inline: 12px;
+} 
+#content {
+  width: 100%;
+  padding-inline: 12px;
+}
+.section {
+  width: 100%;
+}
+.section{
+  width:100%;
+  max-width:100%;        /* ← هذا هو التعديل */
+  margin:auto;
+} 
 </style>
 
 <!-- ===== جافاسكربت (ضعه قبل </body>) ===== -->
@@ -4785,7 +4755,7 @@ function showContent(){
 
   if (!items.length){ content.innerHTML = '<p class="muted" style="text-align:center;margin:20px 0">لا توجد عناصر.</p>'; return; }
 
-  const grid = document.createElement('div'); grid.className='grid';
+  const grid = Object.assign(document.createElement('div'), { className: 'grid' });
 
   items.forEach((i, idx)=>{
     const card = document.createElement('div'); card.className='movie';
@@ -5103,7 +5073,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 </div>
           </div>
                </div>      
-  <div class="section" id="contact" style="display: none;">
+  <div class="section" id="contact" style="display: none; padding-top: 45px;">
    <h2>
     التواصل معنا
    </h2>
